@@ -22,7 +22,6 @@ function manterconexao(){
 }
 
 function carregandosala(){
-    // colocar um gif de carregando quando entrar aqui;
     setInterval(buscarmensagens, 3000);
     setInterval(manterconexao, 4000);
 }
@@ -44,7 +43,7 @@ function renderizarMensagens(resposta){
     
     const ulchat = document.querySelector(".boxmensagens");   
     ulchat.innerHTML = "";
-    // console.log(resposta);
+    console.log(resposta);
 
     let msg = resposta.data.length;
     for(let i=0; msg > i; i++){
@@ -93,7 +92,7 @@ function enviarmensagem(){
     let requisicao = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", dadomsg);
     document.querySelector("input").value = "";
 
-    requisicao.then(buscarmensagens);
+    // requisicao.then(buscarmensagens);
     requisicao.catch(relogar);
 }
 
@@ -101,8 +100,8 @@ function relogar(){
     window.location.reload();
 }
 
-document.addEventListener("keypress", function(elemento){
-    if(elemento.key === "Enter"){
+document.addEventListener("keypress", function(envio){
+    if(envio.key === "Enter"){
       const enviarcomEnter = document.querySelector(".botaoenter")
       enviarcomEnter.click();
     }
