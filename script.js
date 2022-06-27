@@ -67,7 +67,7 @@ function renderizarMensagens(resposta){
         <div class="texto"><strong>${from}</strong> para <strong>${to}</strong>: ${text} </div>
         </li>`;
         ulchat.innerHTML = ulchat.innerHTML + mensagem;
-    }else if(type == "private_message"){
+    }else if(type == "private_message" && to == nomeInicio){
         mensagem = `<li class= "caixamsg rosa">
         <div class="clock">(${time})</div>
         <div class="texto"><strong>${from}</strong> reservadamente para <strong>${to}</strong>: ${text}</div>
@@ -78,4 +78,25 @@ function renderizarMensagens(resposta){
 
     const elementoVisivel = document.querySelector('.caixamsg:last-child');
     elementoVisivel.scrollIntoView();
+}
+
+function enviarmensagem(){
+    let recebermsg = document.querySelector("input").value;
+        
+    let dadomsg = 
+    {   from: nomeInicio,
+        to: "Todos",
+        text: recebermsg,
+        type: "message"
+    }
+
+    let requisicao = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", dadomsg);
+    document.querySelector("input").value = "";
+
+    requisicao.then(buscarmensagens);
+    requisicao.catch(relogar);
+}
+
+function relogar(){
+    window.location.reload();
 }
