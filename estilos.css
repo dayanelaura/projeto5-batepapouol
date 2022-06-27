@@ -11,19 +11,17 @@
   position: fixed;
 }
 
-img.topo:nth-child(1){
+img:nth-child(1){
   width: 75px;
   height: 53px;
   margin-left: 22px;
 }
-img.topo:nth-child(2){
+img:nth-child(2){
   width: 42px;
   height: 31px;
   margin-right: 22.41px;
 }
-img.ground {
-  width: 26px;
-  height: 26px;
+.botaoenter{
   margin-right: 27px;
 }
 
@@ -82,6 +80,11 @@ background-color: #DCDCDC;
 input{
   border: none;
   outline: none;
+  margin-left: 17px;
+  font-family: 'Roboto';
+  font-style: italic;
+  font-size: 18px;
+  color:#000000;
 }
 
 .ground {

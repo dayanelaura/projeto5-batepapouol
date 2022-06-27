@@ -100,3 +100,11 @@ function enviarmensagem(){
 function relogar(){
     window.location.reload();
 }
+
+document.addEventListener("keypress", function(elemento){
+    if(elemento.key === "Enter"){
+      const enviarcomEnter = document.querySelector(".botaoenter")
+      enviarcomEnter.click();
+    }
+}
+)
