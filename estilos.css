@@ -76,6 +76,8 @@ background-color: #DCDCDC;
 }
 
 input{
+  width: 90%;
+  height: 40px;
   border: none;
   outline: none;
   margin-left: 17px;
